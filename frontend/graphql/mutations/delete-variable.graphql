@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/variable'
+
+mutation DeleteVariable ($id: ID!) {
+  deleteVariable (id: $id) {
+    ...VariableFragment
+  }
+}

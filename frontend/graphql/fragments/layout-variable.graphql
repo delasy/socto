@@ -1,0 +1,7 @@
+fragment LayoutVariableFragment on LayoutVariable {
+  createdAt
+  layoutId
+  updatedAt
+  value
+  variableId
+}

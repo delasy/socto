@@ -1,0 +1,11 @@
+query GetCurrentUser {
+  currentUser {
+    createdAt
+    databaseId
+    email
+    firstName
+    id
+    lastName
+    updatedAt
+  }
+}

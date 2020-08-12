@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/project'
+
+mutation DeleteProject ($id: ID!) {
+  deleteProject (id: $id) {
+    ...ProjectFragment
+  }
+}

@@ -1,0 +1,23 @@
+#import '~/graphql/fragments/asset'
+#import '~/graphql/fragments/project'
+
+query GetAssets ($after: ID, $projectId: ID!) {
+  assets (after: $after, first: 20, projectId: $projectId) {
+    edges {
+      cursor
+      node {
+        ... on Asset {
+          ...AssetFragment
+          project {
+            ...ProjectFragment
+          }
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    totalCount
+  }
+}

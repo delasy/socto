@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/icon'
+
+mutation UpdateIcon ($id: ID!, $input: UpdateIconInput!) {
+  updateIcon (id: $id, input: $input) {
+    ...IconFragment
+  }
+}

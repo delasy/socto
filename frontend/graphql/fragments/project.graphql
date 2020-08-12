@@ -1,0 +1,26 @@
+#import '~/graphql/fragments/node'
+
+fragment ProjectFragment on Project {
+  ...NodeFragment
+  bucketConfigAWS {
+    accessKeyId
+    bucketName
+    secretAccessKey
+  }
+  bucketProvider
+  cdnConfigCloudflare {
+    apiToken
+    zoneId
+  }
+  cdnProvider
+  createdAt
+  description
+  globalBodyCode
+  globalHeadCode
+  globalScripts
+  globalStyles
+  name
+  publicURL
+  updatedAt
+  userId
+}

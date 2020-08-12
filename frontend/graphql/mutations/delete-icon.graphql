@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/icon'
+
+mutation DeleteIcon ($id: ID!) {
+  deleteIcon (id: $id) {
+    ...IconFragment
+  }
+}

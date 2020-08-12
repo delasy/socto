@@ -1,0 +1,19 @@
+#import '~/graphql/fragments/page'
+
+query GetAllPages ($projectId: ID!) {
+  pages (projectId: $projectId) {
+    edges {
+      cursor
+      node {
+        ... on Page {
+          ...PageFragment
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    totalCount
+  }
+}

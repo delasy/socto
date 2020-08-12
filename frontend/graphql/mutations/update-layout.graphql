@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/layout'
+
+mutation UpdateLayout ($id: ID!, $input: UpdateLayoutInput!) {
+  updateLayout (id: $id, input: $input) {
+    ...LayoutFragment
+  }
+}

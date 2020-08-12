@@ -1,0 +1,23 @@
+#import '~/graphql/fragments/icon'
+#import '~/graphql/fragments/project'
+
+query GetIcons ($after: ID, $projectId: ID!) {
+  icons (after: $after, first: 20, projectId: $projectId) {
+    edges {
+      cursor
+      node {
+        ... on Icon {
+          ...IconFragment
+          project {
+            ...ProjectFragment
+          }
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    totalCount
+  }
+}

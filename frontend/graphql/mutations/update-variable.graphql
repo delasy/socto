@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/variable'
+
+mutation UpdateVariable ($id: ID!, $input: UpdateVariableInput!) {
+  updateVariable (id: $id, input: $input) {
+    ...VariableFragment
+  }
+}

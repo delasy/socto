@@ -1,0 +1,33 @@
+#import '~/graphql/fragments/layout'
+#import '~/graphql/fragments/page'
+#import '~/graphql/fragments/page-variable'
+#import '~/graphql/fragments/project'
+
+query GetPage ($id: ID!) {
+  node (id: $id) {
+    ... on Page {
+      ...PageFragment
+      layout {
+        ...LayoutFragment
+      }
+      project {
+        ...ProjectFragment
+      }
+      variables {
+        edges {
+          cursor
+          node {
+            ... on PageVariable {
+              ...PageVariableFragment
+            }
+          }
+        }
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+        totalCount
+      }
+    }
+  }
+}

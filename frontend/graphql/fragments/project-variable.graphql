@@ -1,0 +1,7 @@
+fragment ProjectVariableFragment on ProjectVariable {
+  createdAt
+  projectId
+  updatedAt
+  value
+  variableId
+}

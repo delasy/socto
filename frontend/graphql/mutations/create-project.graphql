@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/project'
+
+mutation CreateProject ($input: CreateProjectInput!) {
+  createProject (input: $input) {
+    ...ProjectFragment
+  }
+}

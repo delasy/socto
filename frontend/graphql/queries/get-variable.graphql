@@ -1,0 +1,13 @@
+#import '~/graphql/fragments/project'
+#import '~/graphql/fragments/variable'
+
+query GetVariable ($id: ID!) {
+  node (id: $id) {
+    ... on Variable {
+      ...VariableFragment
+      project {
+        ...ProjectFragment
+      }
+    }
+  }
+}

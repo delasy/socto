@@ -1,0 +1,46 @@
+{
+  "name": "sct-web-backend",
+  "version": "1.0.0",
+  "description": "Web Back-End of Socto",
+  "repository": "github:delasy/sct-web-backend",
+  "author": "Aaron Delasy <mgmt@delasy.com>",
+  "homepage": "https://api.socto.com",
+  "private": true,
+  "dependencies": {
+    "apollo-server-express": "^2.16.1",
+    "aws-sdk": "^2.735.0",
+    "bcrypt": "^5.0.0",
+    "clean-css": "^4.2.3",
+    "cloudflare": "^2.7.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql-upload": "^11.0.0",
+    "gulp": "^4.0.2",
+    "helmet": "^4.0.0",
+    "html-minifier": "^4.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "mime-types": "^2.1.27",
+    "pg": "^8.3.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.4",
+    "uglify-js": "^3.10.1",
+    "validator": "^13.1.1"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "sequelize-cli": "^6.2.0",
+    "standard": "^14.3.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
+  "scripts": {
+    "build": "gulp build --silent",
+    "dev": "gulp dev --silent",
+    "start": "gulp start --silent",
+    "test": "gulp test --silent"
+  }
+}

@@ -1,0 +1,29 @@
+#import '~/graphql/fragments/project'
+#import '~/graphql/fragments/project-variable'
+#import '~/graphql/fragments/user'
+
+query GetProject ($id: ID!) {
+  node (id: $id) {
+    ... on Project {
+      ...ProjectFragment
+      user {
+        ...UserFragment
+      }
+      variables {
+        edges {
+          cursor
+          node {
+            ... on ProjectVariable {
+              ...ProjectVariableFragment
+            }
+          }
+        }
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+        totalCount
+      }
+    }
+  }
+}

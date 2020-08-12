@@ -1,0 +1,12 @@
+#import '~/graphql/fragments/node'
+
+fragment AssetFragment on Asset {
+  ...NodeFragment
+  cacheTTL
+  createdAt
+  folder
+  mimeType
+  name
+  projectId
+  updatedAt
+}

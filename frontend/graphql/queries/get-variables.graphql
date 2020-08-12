@@ -1,0 +1,23 @@
+#import '~/graphql/fragments/project'
+#import '~/graphql/fragments/variable'
+
+query GetVariables ($after: ID, $projectId: ID!) {
+  variables (after: $after, first: 20, projectId: $projectId) {
+    edges {
+      cursor
+      node {
+        ... on Variable {
+          ...VariableFragment
+          project {
+            ...ProjectFragment
+          }
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    totalCount
+  }
+}

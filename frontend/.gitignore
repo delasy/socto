@@ -1,0 +1,8 @@
+# Next.js build output
+/.next/
+
+# Node.js dependencies directory
+/node_modules/
+
+# DotEnv environment variables
+/.env

@@ -1,0 +1,13 @@
+#import '~/graphql/fragments/node'
+
+fragment LayoutFragment on Layout {
+  ...NodeFragment
+  bodyCode
+  createdAt
+  headCode
+  name
+  projectId
+  scripts
+  styles
+  updatedAt
+}

@@ -1,0 +1,7 @@
+fragment PageVariableFragment on PageVariable {
+  createdAt
+  pageId
+  updatedAt
+  value
+  variableId
+}

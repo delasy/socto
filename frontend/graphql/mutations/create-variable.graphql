@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/variable'
+
+mutation CreateVariable ($input: CreateVariableInput!) {
+  createVariable (input: $input) {
+    ...VariableFragment
+  }
+}

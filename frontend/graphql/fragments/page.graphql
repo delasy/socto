@@ -1,0 +1,19 @@
+#import '~/graphql/fragments/node'
+
+fragment PageFragment on Page {
+  ...NodeFragment
+  bodyCode
+  createdAt
+  databaseId
+  folder
+  headCode
+  id
+  layoutId
+  name
+  projectId
+  publishedAt
+  scripts
+  slug
+  styles
+  updatedAt
+}

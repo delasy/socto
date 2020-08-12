@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/icon'
+
+mutation CreateIcon ($input: CreateIconInput!) {
+  createIcon (input: $input) {
+    ...IconFragment
+  }
+}

@@ -1,0 +1,23 @@
+#import '~/graphql/fragments/file'
+#import '~/graphql/fragments/project'
+
+query GetFiles ($after: ID, $projectId: ID!) {
+  files (after: $after, first: 20, projectId: $projectId) {
+    edges {
+      cursor
+      node {
+        ... on File {
+          ...FileFragment
+          project {
+            ...ProjectFragment
+          }
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    totalCount
+  }
+}

@@ -1,0 +1,13 @@
+#import '~/graphql/fragments/icon'
+#import '~/graphql/fragments/project'
+
+query GetIcon ($id: ID!) {
+  node (id: $id) {
+    ... on Icon {
+      ...IconFragment
+      project {
+        ...ProjectFragment
+      }
+    }
+  }
+}

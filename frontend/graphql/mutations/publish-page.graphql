@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/page'
+
+mutation PublishPage ($id: ID!) {
+  publishPage (id: $id) {
+    ...PageFragment
+  }
+}

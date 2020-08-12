@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/file'
+
+mutation DeleteFile ($id: ID!) {
+  deleteFile (id: $id) {
+    ...FileFragment
+  }
+}

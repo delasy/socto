@@ -1,0 +1,23 @@
+#import '~/graphql/fragments/layout'
+#import '~/graphql/fragments/project'
+
+query GetLayouts ($after: ID, $projectId: ID!) {
+  layouts (after: $after, first: 20, projectId: $projectId) {
+    edges {
+      cursor
+      node {
+        ... on Layout {
+          ...LayoutFragment
+          project {
+            ...ProjectFragment
+          }
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    totalCount
+  }
+}

@@ -1,0 +1,9 @@
+#import '~/graphql/fragments/node'
+
+fragment VariableFragment on Variable {
+  ...NodeFragment
+  createdAt
+  name
+  projectId
+  updatedAt
+}

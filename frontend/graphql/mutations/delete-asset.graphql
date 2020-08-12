@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/asset'
+
+mutation DeleteAsset ($id: ID!) {
+  deleteAsset (id: $id) {
+    ...AssetFragment
+  }
+}

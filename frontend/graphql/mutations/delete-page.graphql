@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/page'
+
+mutation DeletePage ($id: ID!) {
+  deletePage (id: $id) {
+    ...PageFragment
+  }
+}

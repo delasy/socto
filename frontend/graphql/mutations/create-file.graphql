@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/file'
+
+mutation CreateFile ($input: CreateFileInput!) {
+  createFile (input: $input) {
+    ...FileFragment
+  }
+}

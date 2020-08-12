@@ -1,0 +1,7 @@
+fragment FileVariableFragment on FileVariable {
+  createdAt
+  fileId
+  updatedAt
+  value
+  variableId
+}

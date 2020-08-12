@@ -1,0 +1,11 @@
+#import '~/graphql/fragments/node'
+
+fragment IconFragment on Icon {
+  ...NodeFragment
+  content
+  createdAt
+  name
+  projectId
+  updatedAt
+  variableName
+}

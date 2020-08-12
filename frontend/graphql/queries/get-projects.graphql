@@ -1,0 +1,23 @@
+#import '~/graphql/fragments/project'
+#import '~/graphql/fragments/user'
+
+query GetProjects ($after: ID) {
+  projects (after: $after, first: 20) {
+    edges {
+      cursor
+      node {
+        ... on Project {
+          ...ProjectFragment
+          user {
+            ...UserFragment
+          }
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+    totalCount
+  }
+}

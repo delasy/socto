@@ -1,0 +1,13 @@
+#import '~/graphql/fragments/asset'
+#import '~/graphql/fragments/project'
+
+query GetAsset ($id: ID!) {
+  node (id: $id) {
+    ... on Asset {
+      ...AssetFragment
+      project {
+        ...ProjectFragment
+      }
+    }
+  }
+}

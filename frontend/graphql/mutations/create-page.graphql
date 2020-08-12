@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/page'
+
+mutation CreatePage ($input: CreatePageInput!) {
+  createPage (input: $input) {
+    ...PageFragment
+  }
+}

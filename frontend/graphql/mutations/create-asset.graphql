@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/asset'
+
+mutation CreateAsset ($input: CreateAssetInput!) {
+  createAsset (input: $input) {
+    ...AssetFragment
+  }
+}

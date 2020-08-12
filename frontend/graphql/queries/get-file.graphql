@@ -1,0 +1,29 @@
+#import '~/graphql/fragments/file'
+#import '~/graphql/fragments/file-variable'
+#import '~/graphql/fragments/project'
+
+query GetFile ($id: ID!) {
+  node (id: $id) {
+    ... on File {
+      ...FileFragment
+      project {
+        ...ProjectFragment
+      }
+      variables {
+        edges {
+          cursor
+          node {
+            ... on FileVariable {
+              ...FileVariableFragment
+            }
+          }
+        }
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+        totalCount
+      }
+    }
+  }
+}

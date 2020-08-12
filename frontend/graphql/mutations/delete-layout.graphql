@@ -1,0 +1,7 @@
+#import '~/graphql/fragments/layout'
+
+mutation DeleteLayout ($id: ID!) {
+  deleteLayout (id: $id) {
+    ...LayoutFragment
+  }
+}
